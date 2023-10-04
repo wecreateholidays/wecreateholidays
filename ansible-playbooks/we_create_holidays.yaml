@@ -1,5 +1,5 @@
 #!/usr/bin/ansible-playbook
-- name: Introduction Ansible Playbooks
+- name: WeCreateHolidays deploy playbook
   hosts: tag_Name_wecreateholidays_beta
   remote_user: ec2-user
   become: 'yes'
