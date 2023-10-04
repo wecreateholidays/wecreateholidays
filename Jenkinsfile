@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+     parameters: [choice(name: 'ENV', choices: ['beta','prod'], description: 'This is a release env')]
+
     stages {
         stage('Checkout'){
             steps {
