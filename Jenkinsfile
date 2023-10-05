@@ -1,7 +1,14 @@
 pipeline {
     agent any
 
-    parameters: [choice(name: 'ENV', choices: ["beta","prod"], description: 'This is a release env')]
+    parameters {
+        choice(
+            name: 'ENV',
+            choices: ['beta', 'prod', 'none'],
+            description: 'Release env on which to deploy'
+        )
+    }
+
 
     stages {
         stage('Checkout'){
@@ -13,6 +20,7 @@ pipeline {
         stage('Build'){
             steps {
                 echo 'Creating deployable build.'
+                echo 'params received: ${params.ENV}'
             }
         }
 
