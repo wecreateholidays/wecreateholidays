@@ -1,7 +1,10 @@
 plugin: amazon.aws.aws_ec2
 filters:
   instance-state-name: running
-  tag:ServerType: {{ tagEnv }}
+  #tag:ServerType: "wecreateholidays_beta"
+  tag:ServerType:
+    - '{{ tagEnv }}'
+  #tag:ServerType: "{{ lookup('env', 'temp') }}"
 
 keyed_groups:
   - key: tags
