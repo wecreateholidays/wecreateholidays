@@ -33,7 +33,8 @@ pipeline {
                     sh 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}'
                     echo 'Deploying WecreateHolidays on Aws'
                     //sh './ansible-playbooks/we_create_holidays.yaml'
-                    sh 'ansible-playbook ./ansible-playbooks/we_create_holidays.yaml -i we_create_holidays.aws_ec2.yaml -e env="beta"'
+                    sh 'echo "Printing env variable: ${params.ENV}"'
+                    sh 'ansible-playbook ./ansible-playbooks/we_create_holidays.yaml -i we_create_holidays.aws_ec2.yaml -e env="beta" tagEnv="wecreateholidays_beta"'
                     //sh 'ansible-playbook ./ansible-playbooks/we_create_holidays.yaml -i we_create_holidays.aws_ec2.yaml'
                     //ansiblePlaybook playbook: './ansible-playbooks/we_create_holidays.yaml', extras: " -e env=${params.ENV}"
                     
