@@ -1,7 +1,7 @@
 plugin: amazon.aws.aws_ec2
 filters:
   instance-state-name: running
-  tag:ServerType: wecreateholidays_beta
+  tag:ServerType: wecreateholidays_{{ env }}
 
 keyed_groups:
   - key: tags

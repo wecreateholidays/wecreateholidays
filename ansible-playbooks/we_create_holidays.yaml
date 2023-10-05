@@ -1,6 +1,6 @@
 #!/usr/bin/ansible-playbook
 - name: WeCreateHolidays deploy playbook
-  hosts: tag_Name_wecreateholidays_beta
+  hosts: tag_Name_wecreateholidays_{{ env }}
   remote_user: ec2-user
   become: 'yes'
   become_user: root
