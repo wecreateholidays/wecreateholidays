@@ -1,8 +1,7 @@
 pipeline {
     agent any
 
-    def tools = load 'utils/deploy_tools.gvy'
-     parameters: [choice(name: 'ENV', choices: tools.getEnvDetails(), description: 'This is a release env')]
+    parameters: [choice(name: 'ENV', choices: ["beta","prod"], description: 'This is a release env')]
 
     stages {
         stage('Checkout'){
