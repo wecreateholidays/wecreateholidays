@@ -1,6 +1,6 @@
 #!/usr/bin/ansible-playbook
-- name: Introduction Ansible Playbooks
-  hosts: all
+- name: WeCreateHolidays deploy playbook
+  hosts: env_{{ envType }}
   remote_user: ec2-user
   become: 'yes'
   become_user: root
